@@ -1,2 +1,6 @@
 */venv/
 venv
+secrets.env
+*pycache*/
+**/__pycache__/
+*.pyc
