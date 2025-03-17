@@ -4,3 +4,5 @@ secrets.env
 *pycache*/
 **/__pycache__/
 *.pyc
+*/outputs/*
+.DS_Store
