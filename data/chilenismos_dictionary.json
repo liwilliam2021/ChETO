@@ -359,6 +359,20 @@
         "definition": "Bus del transporte p\u00fablico.",
         "is_verb": false
     },
+    "Cromi": {
+        "definition": "Bus del transporte p\u00fablico.",
+        "is_verb": false,
+        "_comment": "Urban slag, reversed micro"
+    },
+    "Metro": {
+        "definition": "Tren subterráneo o sistema de transporte ferroviario urbano.",
+        "is_verb": false
+    },
+    "Trome": {
+        "definition": "Tren subterráneo o sistema de transporte ferroviario urbano.",
+        "is_verb": false,
+        "_comment": "Urban slag, reversed metro"
+    },
     "Mina": {
         "definition": "Mujer, chica, muchacha. Adem\u00e1s del gen\u00e9rico, se usa para denominar a las chicas atractivas.",
         "is_verb": false
@@ -397,6 +411,10 @@
     },
     "Estar pal gato": {
         "definition": "Sentirse mal, enfermo.",
+        "is_verb": true
+    },
+    "Echárse la yegua": {
+        "definition": "Sentir un cansancio repentino y fulminante.",
         "is_verb": true
     },
     "Pagar el piso": {
@@ -445,6 +463,10 @@
     },
     "Pololeo": {
         "definition": "Relaci\u00f3n amorosa, de pareja cuando no se est\u00e1 casado.",
+        "is_verb": false
+    },
+    "Pololo": {
+        "definition": "Hombre que mantiene una relaci\u00f3n amorosa, de pareja, cuando no est\u00e1 casado. O trabajo ocasional o temporal",
         "is_verb": false
     },
     "Polola": {
@@ -554,5 +576,412 @@
     "Andar como zombi": {
         "definition": "Dormido, con sue\u00f1o, medio inconsciente.",
         "is_verb": true
+    },
+    "Estar más perdido que el teniente Bello": {
+        "definition": "No hallar o perder el camino.",
+        "is_verb": true,
+        "_comment": "Historical slang"
+    },
+    "Andar más perdido que el teniente Bello": {
+        "definition": "No hallar o perder el camino.",
+        "is_verb": true,
+        "_comment": "Historical slang"
+    },
+    "Clotear": {
+        "definition": "ser detenido o salir mal algo",
+        "is_verb": true
+    },
+    "estar como piojo": {
+        "definition": "Estar drogado.",
+        "is_verb": true
+    },
+    "darse una manito de gato": {
+        "definition": "Arreglarse, maquillarse.",
+        "is_verb": true
+    },
+    "por si las moscas": {
+        "definition": "Por si acaso.",
+        "is_verb": false
+    },
+    "ser pavo": {
+        "definition": "Ser desatento o estúpido.",
+        "is_verb": true
+    },
+    "ser caballo": {
+        "definition": "Ser magnífico.",
+        "is_verb": true
+    },
+    "ser chancho": {
+        "definition": "Ser sucio, desaseado o glotón.",
+        "is_verb": true
+    },
+    "ser ganso": {
+        "definition": "Ser desatento o estúpido.",
+        "is_verb": true
+    },
+    "ser pollo": {
+        "definition": "Tener poca experiencia.",
+        "is_verb": true
+    },
+    "estar cabreado": {
+        "definition": "Estar harto.",
+        "is_verb": true
+    },
+    "estar cabreada": {
+        "definition": "Estar harta.",
+        "is_verb": true
+    },
+    "caracho": {
+        "definition": "Cara.",
+        "is_verb": false
+    },
+    "tontorrón": {
+        "definition": "Tonto.",
+        "is_verb": false
+    },
+    "aguaitar": {
+        "definition": "Cuidar, guardar.",
+        "is_verb": true
+    },
+    "achunchar": {
+        "definition": "Avergonzar, turbar.",
+        "is_verb": true
+    },
+    "afiche": {
+        "definition": "Póster.",
+        "is_verb": false
+    },
+    "bifé": {
+        "definition": "Mueble con cajones.",
+        "is_verb": false
+    },
+    "chomba": {
+        "definition": "Jersey.",
+        "is_verb": false
+    },
+    "chutear": {
+        "definition": "Disparar (usado en el fútbol).",
+        "is_verb": true
+    },
+    "clóset": {
+        "definition": "Armario, ropero.",
+        "is_verb": false
+    },
+    "confort": {
+        "definition": "Papel higiénico.",
+        "is_verb": false
+    },
+    "école": {
+        "definition": "Tal cual, exacto; así es, claro.",
+        "is_verb": false
+    },
+    "futre": {
+        "definition": "Acomodado, bien vestido, lechuguino.",
+        "is_verb": false
+    },
+    "jaibón": {
+        "definition": "Nacido en noble cuna o aristócrata.",
+        "is_verb": false
+    },
+    "living": {
+        "definition": "Cuarto de estar, sala de estar.",
+        "is_verb": false
+    },
+    "lobear": {
+        "definition": "Cabildear, ejercer presión para obtener algo.",
+        "is_verb": true
+    },
+    "luquear": {
+        "definition": "Echar una mirada, un vistazo.",
+        "is_verb": true
+    },
+    "lumpen": {
+        "definition": "Población urbana marginal.",
+        "is_verb": false
+    },
+    "overol": {
+        "definition": "Mameluco, mono.",
+        "is_verb": false
+    },
+    "queque": {
+        "definition": "Bizcochuelo.",
+        "is_verb": false
+    },
+    "rating": {
+        "definition": "Cuota de pantalla.",
+        "is_verb": false
+    },
+    "lobby": {
+        "definition": "Vestíbulo, foyer.",
+        "is_verb": false
+    },
+    "short": {
+        "definition": "Pantalón corto.",
+        "is_verb": false
+    },
+    "vestón": {
+        "definition": "Chaqueta.",
+        "is_verb": false
+    },
+    "chala": {
+        "definition": "Zapato rústico que deja partes del pie al descubierto.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "champa": {
+        "definition": "Tepe, pedazo de pasto o hierbas con tierra adherida; también cantidad considerable de pelo.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "chasca": {
+        "definition": "Pelo desarreglado, flequillo.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "quilla": {
+        "definition": "Pelo desarreglado, flequillo.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "chaucha": {
+        "definition": "Antigua moneda de escaso valor, moneda de poco valor.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "chaya": {
+        "definition": "Confeti.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "chicote": {
+        "definition": "Correa usada para azuzar al ganado.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "chupalla": {
+        "definition": "Sombrero artesanal de paja (achupalla) usado por los huasos.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "cocaví": {
+        "definition": "Colación ligera para viaje.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "concho": {
+        "definition": "Sedimento al fondo de un recipiente; último hijo de una pareja o muy menor a los demás.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "coronta": {
+        "definition": "El zuro o marlo de la mazorca.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "encachar": {
+        "definition": "Embellecer; hacer bonito, atractivo.",
+        "is_verb": true,
+        "_comment": "léxicos de origen quechua"
+    },
+    "wawa": {
+        "definition": "Niño pequeño, bebé, lactante, sin distinción del sexo.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "guaraca": {
+        "definition": "Cuerda que se enrolla al trompo o peón, zumbel.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "huasca": {
+        "definition": "Cuerda, correa usada para azuzar al ganado.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "huincha": {
+        "definition": "Tira delgada de material flexible; cuerda de medir.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "llevar al apa": {
+        "definition": "Cargar a alguien en la espalda.",
+        "is_verb": true,
+        "_comment": "léxicos de origen quechua"
+    },
+    "nanay": {
+        "definition": "Caricia para calmar el dolor; también se usa para describir algo adorable.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "ñèque": {
+        "definition": "Energía, fuerza, vigor.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "pita": {
+        "definition": "Cuerda, soga.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "pitearse una cosa": {
+        "definition": "Romper una cosa.",
+        "is_verb": true,
+        "_comment": "léxicos de origen quechua"
+    },
+    "poto": {
+        "definition": "Nalga.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "pucho": {
+        "definition": "Originalmente referido a la colilla del cigarrillo y, por extensión, cigarrillo.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "suche": {
+        "definition": "Empleado de última categoría.",
+        "is_verb": false,
+        "_comment": "léxicos de origen quechua"
+    },
+    "tincar": {
+        "definition": "Intuir, presentir, entrever, sospechar; tener una corazonada; dar la impresión, parecer.",
+        "is_verb": true,
+        "_comment": "léxicos de origen quechua"
+    },
+    "cuico": {
+        "definition": "Persona de clase alta o que aparenta serlo; alguien considerado elitista o con actitudes de superioridad social.",
+        "is_verb": false
+    },
+    "cuica": {
+        "definition": "Persona de clase alta o que aparenta serlo; alguien considerado elitista o con actitudes de superioridad social.",
+        "is_verb": false
+    },
+    "Apercancarse": {
+        "definition": "Llenar la ropa de hongos; Ponerse la ropa amarillenta y de mal olor.",
+        "is_verb": true,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Chalcha": {
+        "definition": "Papada, capa de grasa subcutánea que cuelga; Cosa de mala calidad.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Charcha": {
+        "definition": "Papada, capa de grasa subcutánea que cuelga; Cosa de mala calidad.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Chamanto": {
+        "definition": "Manta de dos caras finamente tejida.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Chape": {
+        "definition": "Trenza.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Cuncuna": {
+        "definition": "Oruga.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Curiche": {
+        "definition": "Persona de piel oscura o negra.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Funa": {
+        "definition": "Ruina, lo que arruina o echa a perder; Boicot, cancelación.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Guarén": {
+        "definition": "Rata noruega.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Huifa": {
+        "definition": "Interjección para expresar alegría.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Laucha": {
+        "definition": "Ratón.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Malón": {
+        "definition": "Fiesta en que los invitados llegan de sorpresa a la casa del anfitrión con bebidas y comestibles.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Pichintún": {
+        "definition": "Un poco.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Pichiruchi": {
+        "definition": "Gente diminuta; Algo despreciable, insignificante.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Pilcha": {
+        "definition": "Ropa, vestimenta, vestuario pobre o en mal estado.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Piñén": {
+        "definition": "Asperezas de la piel al restregarla; Mugre, suciedad.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Puelche": {
+        "definition": "Viento cálido que baja desde la cordillera de los Andes a la depresión intermedia.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Quiltro": {
+        "definition": "Perro mestizo, perro callejero.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Ruca": {
+        "definition": "Casa tradicional mapuche; Vivienda precaria.",
+        "is_verb": false,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Trapicarse": {
+        "definition": "Atorarse con saliva o con comida.",
+        "is_verb": true,
+        "_comment": "léxicos de origen mapuche"
+    },
+    "Po": {
+        "definition": "Pues",
+        "is_verb": false
+    },
+    "Pos": {
+        "definition": "Pues",
+        "is_verb": false
+    },
+    "ya": {
+        "definition": "Sí o bueno",
+        "is_verb": false
+    },
+    "denante": {
+        "definition": "antes, hace un momento",
+        "is_verb": false
+    },
+    "de repente": {
+        "definition": "a veces, posiblemente",
+        "is_verb": false
+    },
+    "altiro": {
+        "definition": "De inmediato.",
+        "is_verb": false
+    },
+    "Antártica": {
+        "definition": "Antártida",
+        "is_verb": false
     }
 }

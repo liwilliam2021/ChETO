@@ -8,12 +8,15 @@ Requires Python 3.12 for spaCy compatibility.
 
 import spacy
 from spacy.matcher import Matcher
+
 import re
 import json
+import itertools
 
 CHILENISMO_PATH = "../data/chilenismos_dictionary.json"
 QUEISMO_TRIGGERS_PATH = "../data/queísmo_triggers.json"
 
+# TODO: i think for simplicity just keep everything lowercase
 """
 Rules for detecting specific Chilean Spanish dialect features.
 Does NOT modify the input text. Does not mantain state.
@@ -23,6 +26,7 @@ class ChileanDialectRules:
         # Load spaCy, needs to be large to avoid errors
         self.nlp = spacy.load("es_core_news_lg")
         self.reflexive_pronouns = {"me", "te", "se", "nos", "os"}
+        self.clitic_pronouns = {"me", "te", "se", "nos", "os", "lo", "la", "los", "las"}
 
         # Load Chilean Spanish dictionary
         with open(CHILENISMO_PATH, "r", encoding="utf-8") as f:
@@ -136,9 +140,9 @@ class ChileanDialectRules:
                             # Ensure that the chilenismo verb has the right objects
                             elif has_objects_suffix or has_parenthetical:
                                 key = None
-                                if has_objects_suffix:
+                                if has_objects_suffix: # Check if it's a direct object
                                     key = "algo"
-                                else:
+                                else: # See what is expected in the parenthetical
                                     for obj in self.SPANISH_VERB_OBJECTS:
                                         # Should do regex here but I'm lazy
                                         if obj in chilenismo_lower:
@@ -221,3 +225,32 @@ class ChileanDialectRules:
             if self.is_chilean_imperative(token):
                 return True
         return False
+    
+    def find_clitic_pronoun_detect_reduplication(self, input_text, doc=None):
+        if doc is None:
+            doc = self.nlp(input_text)
+        
+        # Iterate over tokens to find root verbs and corresponding clitic pronouns.
+        for token in doc:
+            """
+            Root verbs, because spaCy errors, we have some false negatives when dártelas is classified as a noun
+            """
+            if token.pos_ == "VERB" and token.head == token:
+                one_hop_children = list(token.children)
+                # two hop for examples like "Me voy a irme"
+                two_hop_children = [grandchild for child in one_hop_children for grandchild in child.children]
+                all_children = one_hop_children + two_hop_children
+
+                # Collect clitic_pronoun in children texts
+                pronouns = [t.text.lower() for t in all_children if t.pos_ == "PRON" and t.text.lower() in self.clitic_pronouns]
+                verbs = [t.text.lower() for t in all_children if t.pos_ == "VERB"]
+                verbs.append(token.text.lower())
+                
+                # TODO: Sort clitics to reflect Spanish clitic ordering, if needed
+                # But here, we will just try all possible orderings (permutations)
+                for verb in verbs:
+                    for r in range(1, len(pronouns) + 1):
+                        for chain in itertools.permutations(pronouns, r):
+                            clitic_suffix = ''.join(chain)
+                            if verb.endswith(clitic_suffix):
+                                return True
