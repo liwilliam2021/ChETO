@@ -3,7 +3,7 @@ import random
 from collections import defaultdict
 
 from prompts import *
-from apis import *
+from utils.apis import *
 
 RANDOM_SEED = 42
 random.seed(RANDOM_SEED)
