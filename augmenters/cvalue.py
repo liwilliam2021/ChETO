@@ -234,7 +234,13 @@ class ChileanDialectRules:
                                 }
                             )
                             break
-                else:
+                else: # Verb case
+                    if not has_parenthetical:
+                        # Check that remaining verb phrase appears
+                        if len (chilenismo_lower.split()) > 1:
+                            remaining_phrase = " ".join(chilenismo_lower.split()[1:])
+                            if not re.search(remaining_phrase, input_text.lower()):
+                                continue
                     # Check if the verb is in the right form
                     for token in doc:
                         if (
