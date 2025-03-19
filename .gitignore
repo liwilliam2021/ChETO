@@ -9,3 +9,4 @@ secrets.env
 data/*
 !data/chilenismos_dictionary.json
 !data/queísmo_triggers.json
+*/weights/*
