@@ -20,7 +20,7 @@ Does NOT modify the input text. Does not mantain state.
 """
 class ChileanDialectRules:
     def __init__(self):
-        # Load spaCy
+        # Load spaCy, needs to be large to avoid errors
         self.nlp = spacy.load("es_core_news_lg")
         self.reflexive_pronouns = {"me", "te", "se", "nos", "os"}
 
@@ -59,16 +59,26 @@ class ChileanDialectRules:
             "algo": {"NOUN", "PROPN", "PRON"},  # PRON is like 'lo'
             "infinitivo": {"VERB"},
         }
-        # Voseo forms
-        self.voseo_endings = ["ái", "ís"]  # Chilean voseo present indicative endings
+        # Voseo forms, TODO: clean these up more
+        self.voseo_endings = ["ái", "ís", "éis", "íais"]  # Chilean voseo `present indicative` endings
         self.voseo_irregulars = {
-            "sos",      # ser
+            "soi",      # ser
+            "sois",     # ser
+            "erís",     # ser
             "tenís",    # tener
             "venís",    # venir
             "podís",    # poder
             "hacís",    # hacer
             "decís",    # decir
             "sabís",    # saber
+            "habís",    # haber
+            "hai",     # haber
+            "vis",     # ver
+            "veís",    # ver
+        }
+        # Second person chilean imperatives
+        self.chilean_imperatives = {
+            "anda", "hace", "pone", "sale"
         }
 
         # self.morphosyntax_rules = [
@@ -152,6 +162,9 @@ class ChileanDialectRules:
         Technically you want, "Person=2" in token.morph, but spaCey doesn't provide that
         SpaCy's Spanish models are trained on general European Spanish,
         which doesn't heavily account for voseo forms
+
+        TODO: ellaborate more formally with 
+        https://es.m.wikibooks.org/wiki/Espa%C3%B1ol/Voseo/Conjugaci%C3%B3n_chilena_moderna_urbana
         """
         if (
             token.pos_ == "VERB"
@@ -187,3 +200,24 @@ class ChileanDialectRules:
         if matches:
             for match_id, start, end in matches:
                 span = doc[start:end]
+    
+    def is_chilean_imperative(self, token):
+        """
+        Detects if a verb is in the second person imperative form.
+        """
+        # Doesn't work great because spaCy doesn't have a great parser for this, can't match the lemas for example
+        # You technically cannot distinguish well between anda (to walk) and anda (imperative of ir)
+        if token.pos_ == "VERB" and token.morph.get("Mood") == ["Imp"] and token.text.lower() in self.chilean_imperatives:
+            return True
+        return False
+
+    def has_chilean_imperative(self, input_text, doc=None):
+        """
+        Detects if the input text has a Chilean imperative verb.
+        """
+        if doc is None:
+            doc = self.nlp(input_text)
+        for token in doc:
+            if self.is_chilean_imperative(token):
+                return True
+        return False

@@ -17,14 +17,14 @@ for token in doc:
 with open(CHILENISMO_PATH, 'r', encoding="utf-8") as f:
     chilenismos_dictionary = json.load(f)
 
-# for chilenismo in chilenismos_dictionary:
-#     doc = nlp(chilenismo)
-#     print (
-#         [
-#             (token.text, token.lemma_, token.pos_)
-#             for token in doc
-#         ]
-#     )
+for chilenismo in chilenismos_dictionary:
+    doc = nlp(chilenismo)
+    print (
+        [
+            (token.text, token.lemma_, token.pos_)
+            for token in doc
+        ]
+    )
 
 voseo_endings = ["ás", "és", "ís"]
 voseo_irregulars = {"sos", "tenés", "venís", "podés", "hacés", "decís", "sabés"}
@@ -39,8 +39,8 @@ def is_voceo(token):
             return True
     return False
 
-# text = "Vos hablás muy rápido pero no sabés escuchar."
-# doc = nlp(text)
-# for token in doc:
-#     if is_voceo(token):
-#         print(f"Voceo detected: {token.text} (lemma: {token.lemma_})")
+text = "Vos hablás muy rápido pero no sabés escuchar."
+doc = nlp(text)
+for token in doc:
+    if is_voceo(token):
+        print(f"Voceo detected: {token.text} (lemma: {token.lemma_})")
