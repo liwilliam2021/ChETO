@@ -22,6 +22,7 @@ EXAMPLE_DATA_PATH = "../data/chilean_examples.json"
 BEST_EXAMPLES_PATH = "../data/best_chilean_examples.json"
 TRANSFORMED_EXAMPLES_PATH = "../data/CVALUE.json"
 TOP_N_EXAMPLES_PATH = "../data/top_n_chilean_examples.json"
+PAIRS_CSV_PATH = "../data/top_n_chilean_examples.csv"
 
 dialect_model = ChileanDialectRules()
 
@@ -193,8 +194,8 @@ def score_transformation_pairs(
 def get_top_n(
     transformed_examples=None,
     input_filename=TRANSFORMED_EXAMPLES_PATH,
-    n=10,
-    output_filename="TOP_N_EXAMPLES_PATH",
+    n=2000,
+    output_filename=TOP_N_EXAMPLES_PATH,
 ):
     if not transformed_examples:
       with open(input_filename, "r") as f:
@@ -214,10 +215,32 @@ def get_top_n(
     print(f"Top {n} examples saved to {output_filename}")
     return top_n_dict
 
+def save_to_csv (input_filename=TOP_N_EXAMPLES_PATH, output_filename=PAIRS_CSV_PATH):
+    import pandas as pd
+    with open(input_filename, "r") as f:
+        data = json.load(f)
+    # Extract the fields you need
+    rows = []
+    for value in data.values():
+        rows.append({
+            "original_text": value["original_text"],
+            "transformed_text": value["transformed_text"],
+            "matches": value["matches"]
+        })
+
+    # Convert to DataFrame
+    df = pd.DataFrame(rows)
+
+    # Save to CSV
+    df.to_csv(output_filename, index=False)
+
+    print("CSV file has been created.")
+
 
 # data = sample_data()
 # examples = compute_chilean_examples(data)
 # best_examples = find_best_examples(examples)
 # transform_best_examples(best_examples)
-score_transformation_pairs()
-get_top_n()
+# score_transformation_pairs()
+# get_top_n()
+save_to_csv ()

@@ -77,4 +77,4 @@ def get_sentiment(llm_api, text, model_override=None):
 
 # TODO: run in script
 # print(get_sentiment(anthropic_api, "El servicio fue pésimo, la comida llegó fría y tardaron demasiado."))
-print(compute_sentiment_accuracy(anthropic_api))
+print(compute_sentiment_accuracy(openai_api))
