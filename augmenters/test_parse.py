@@ -1,5 +1,8 @@
 import spacy
 import json
+
+from cvalue import ChileanDialectRules
+
 CHILENISMO_PATH = "../data/chilenismos_dictionary.json"
 nlp = spacy.load("es_core_news_lg")
 # text = "Los niños corrieron rápido"
