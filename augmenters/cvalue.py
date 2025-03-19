@@ -114,12 +114,55 @@ class ChileanDialectRules:
         all_matches = sorted(all_matches, key=lambda x: x["start"])
         return all_matches
 
+    def score_matches(self, matches):
+        """
+        Scores the matches based on the number of matches and the number of unique matches.
+        Random heuristic I made up for now.
+        """
+        num_matches = len(matches)
+        unique_matches = len(set(match["text"] for match in matches))
+        chilenismos = len(
+            [match["text"] for match in matches if "Chilenismo" in match["explanation"]]
+        )
+        queismos = len(
+            [match["text"] for match in matches if "Queísmo" in match["explanation"]]
+        )
+        voceos = len(
+            [
+                match["text"]
+                for match in matches
+                if "Chilean voseo" in match["explanation"]
+            ]
+        )
+        imperatives = len(
+            [
+                match["text"]
+                for match in matches
+                if "Chilean imperative" in match["explanation"]
+            ]
+        )  # these kinda suck, so no score
+        reduplications = len(
+            [
+                match["text"]
+                for match in matches
+                if "Clitic reduplication" in match["explanation"]
+            ]
+        )
+        return (
+            0.5 * num_matches
+            + 0.5 * unique_matches
+            + 2 * chilenismos
+            + 0.5 * queismos
+            + 2 * voceos
+            + 1 * reduplications
+        )
+
     def get_chilenismos_rule(self, chilenismo):
         """
         Returns the rule for a specific chilenismo.
         """
         return (
-            f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish, meaning: {self.chilenismos_dictionary[chilenismo]['definition']}",
+            f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish, meaning: {self.chilenismos_dictionary[chilenismo]['definition']}"
         )
 
     def find_chilenismos(self, input_text, doc=None):
@@ -146,6 +189,10 @@ class ChileanDialectRules:
         for chilenismo in self.chilenismos_dictionary:
             # Careful about multi-word chilenismos
             chilenismo_lower = chilenismo.lower()
+
+            # Sorry too many false positives :(
+            if chilenismo_lower == "ya":
+                continue
 
             # If there's a direct match, return the chilenismo, it's probably right!
             pattern = r"\b" + re.escape(chilenismo_lower) + r"\b"
@@ -243,7 +290,7 @@ class ChileanDialectRules:
                                             ),
                                         }
                                     )
-                            else: # Just a normal verb
+                            else:  # Just a normal verb
                                 results.append(
                                     {
                                         "text": token.text,
@@ -403,11 +450,13 @@ class ChileanDialectRules:
                 # But here, we will just try all possible orderings (permutations)
                 for verb in verb_tokens:
                     for r in range(1, len(pronouns) + 1):
-                        for chain in itertools.permutations(
-                            [p for p in pronouns], r
-                        ):
+                        for chain in itertools.permutations([p for p in pronouns], r):
                             clitic_suffix = "".join(chain)
-                            if verb.text.lower().endswith(clitic_suffix):
+                            if verb.text.lower().endswith(
+                                clitic_suffix
+                            ) and not verb.text.lower().endswith(
+                                ("aste", "este", "iste")
+                            ):  # Watch edge case with te matched with preterite tense
                                 for pronoun in pronouns:
                                     if pronoun in chain:
                                         reduplications.append(
@@ -419,4 +468,13 @@ class ChileanDialectRules:
                                             }
                                         )
                                 break  # Avoid duplicate explanations for same verb
-        return reduplications
+
+        # Post-process to remove duplicates
+        unique_reduplications = []
+        seen = set()
+        for r in reduplications:
+            key = (r["text"], r["start"], r["end"], r["explanation"])
+            if key not in seen:
+                seen.add(key)
+                unique_reduplications.append(r)
+        return unique_reduplications

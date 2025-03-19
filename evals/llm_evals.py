@@ -2,7 +2,7 @@ import json
 import random
 from collections import defaultdict
 
-from prompts import *
+from utils.prompts import *
 from utils.apis import *
 
 RANDOM_SEED = 42
