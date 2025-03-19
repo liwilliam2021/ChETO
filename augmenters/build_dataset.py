@@ -21,6 +21,7 @@ CHILEAN_DATA_PATH = "../data/chilean_text.json"
 EXAMPLE_DATA_PATH = "../data/chilean_examples.json"
 BEST_EXAMPLES_PATH = "../data/best_chilean_examples.json"
 TRANSFORMED_EXAMPLES_PATH = "../data/CVALUE.json"
+TOP_N_EXAMPLES_PATH = "../data/top_n_chilean_examples.json"
 
 dialect_model = ChileanDialectRules()
 
@@ -146,8 +147,77 @@ def transform_best_examples(
     return transformed_examples
 
 
-data = sample_data()
-examples = compute_chilean_examples(data)
-best_examples = find_best_examples(examples)
-transform_best_examples(best_examples)
-transform_best_examples()
+def score_transformation_pair(original, transformed):
+    prompt = SCORE_PAIR_PROMPT.format(original=original, transformed=transformed)
+    response = ask_gpt([{"role": "system", "content": prompt}])
+    # Extract the score as an integer
+    try:
+        score = int(response.strip())
+    except ValueError:
+        score = 0  # fallback if GPT response is malformed
+    return score
+
+
+def score_transformation_pairs(
+    transformed_examples=None,
+    input_filename=TRANSFORMED_EXAMPLES_PATH,
+    output_filename=TRANSFORMED_EXAMPLES_PATH,
+    max_workers=10,
+):
+    # Load from file if not provided
+    if not transformed_examples:
+        with open(input_filename, "r") as f:
+            transformed_examples = json.load(f)
+
+    # Score all transformations
+    def process_scoring(paragraph, data):
+        score = score_transformation_pair(paragraph, data["transformed_text"])
+        data["dialect_score"] = score
+        return paragraph, data
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = []
+        for paragraph, data in transformed_examples.items():
+            futures.append(executor.submit(process_scoring, paragraph, data))
+
+        for future in concurrent.futures.as_completed(futures):
+            paragraph, updated_data = future.result()
+            transformed_examples[paragraph] = updated_data
+
+    # Save all scored examples
+    with open(output_filename, "w") as f:
+        json.dump(transformed_examples, f, indent=4, ensure_ascii=False)
+    print(f"Scored examples saved to {output_filename}")
+
+
+def get_top_n(
+    transformed_examples=None,
+    input_filename=TRANSFORMED_EXAMPLES_PATH,
+    n=10,
+    output_filename="TOP_N_EXAMPLES_PATH",
+):
+    if not transformed_examples:
+      with open(input_filename, "r") as f:
+          transformed_examples = json.load(f)
+    sorted_items = sorted(
+        transformed_examples.items(),
+        key=lambda x: x[1].get("dialect_score", 0),
+        reverse=True,
+    )
+    top_n = sorted_items[:n]
+    top_n_dict = {k: v for k, v in top_n}
+
+    # Save to JSON
+    with open(output_filename, "w") as f:
+        json.dump(top_n_dict, f, indent=4, ensure_ascii=False)
+
+    print(f"Top {n} examples saved to {output_filename}")
+    return top_n_dict
+
+
+# data = sample_data()
+# examples = compute_chilean_examples(data)
+# best_examples = find_best_examples(examples)
+# transform_best_examples(best_examples)
+score_transformation_pairs()
+get_top_n()

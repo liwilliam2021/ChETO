@@ -2,6 +2,11 @@ import json
 import random
 from collections import defaultdict
 
+# TODO: what is happening with my imports? too tired to debug right now
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from utils.prompts import *
 from utils.apis import *
 
@@ -11,17 +16,28 @@ random.seed(RANDOM_SEED)
 openai_api = OpenAI_API()
 anthropic_api = Anthropic_API()
 
-
-def compute_sentiment_accuracy(llm_api, length=100, model_override=None):
+def compute_sentiment_accuracy(llm_api, length=120, model_override=None, save_path_base="predictions_output.json"):
+    save_path = "outputs/" + llm_api.api_name + "_" + save_path_base
     sentiment_scores = get_sentiment_scores(llm_api, length, model_override)
     total_error = 0
+    output_data = []
+
     for review in sentiment_scores:
         true = review["rating"]
         predicted = review["predicted_rating"]
         error = abs(true - predicted)
         total_error += error
-    return 1 - total_error / (5 * length)
+        output_data.append({
+            "review": review["review"],
+            "true_rating": true,
+            "predicted_rating": predicted
+        })
 
+    # Save to JSON
+    with open(save_path, "w") as f:
+        json.dump(output_data, f, indent=2)
+
+    return 1 - total_error / (5 * length)
 
 def get_sentiment_scores(llm_api, length, model_override=None):
     sentiment_data = json.load(open("../scrapers/outputs/labeled_data.json"))

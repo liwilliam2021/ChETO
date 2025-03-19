@@ -2,3 +2,5 @@ numpy
 torch
 datasets
 transformers
+typeguard
+adapter

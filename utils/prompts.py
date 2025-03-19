@@ -25,6 +25,22 @@ Chileanisms to replace (with explanations):
 Return the paragraph in Castilian Spanish with only the specified adjustments. Your response should be a clean, grammatically correct version of the text. Output only the adapted paragraph—do not include explanations or additional commentary.
 """
 
+SCORE_PAIR_PROMPT ="""
+You are a linguistics expert. Your task is to score how meaningfully the following transformation demonstrates regional dialect differences between Chilean Spanish (original) and Castilian Spanish (transformed). Only score dialect differences.
+
+Score from 0 to 10 where:
+- 0 = no noticeable dialect difference
+- 10 = strong, clear dialectal transformation with meaningful changes
+
+Original (Chilean):
+{original}
+
+Transformed (Castilian):
+{transformed}
+
+Respond ONLY with a single number between 0 and 10.
+"""
+
 
 # TODO: Refine in context learning into distribution
 SENTIMENT_PROMPT = """
@@ -51,4 +67,15 @@ Input: "Todo excelente, el mejor restaurante que he visitado."
 Output: 5
 
 Text to classify:
+"""
+
+CONTRASTIVE_PROMPT = """
+Given two sentences from the same document, predict if the second sentence is the likely next sentence following the first.
+
+Sentence A: "{anchor}"
+Sentence B: "{candidate}"
+
+Question: Is Sentence B likely to directly follow Sentence A in the original text? Respond only with "Yes" or "No".
+
+Answer:
 """
