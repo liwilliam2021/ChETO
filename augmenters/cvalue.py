@@ -22,6 +22,7 @@ Rules for detecting specific Chilean Spanish dialect features.
 Does NOT modify the input text. Does not mantain state.
 """
 
+
 class ChileanDialectRules:
     def __init__(self):
         # Load spaCy, needs to be large to avoid errors
@@ -93,7 +94,7 @@ class ChileanDialectRules:
             self.find_voceo_verbs,
             self.find_queismo,
             self.find_chilean_imperative,
-            self.find_clitic_pronoun_detect_reduplication
+            self.find_clitic_pronoun_detect_reduplication,
         ]
 
     def run_rules(self, input_text):
@@ -113,6 +114,14 @@ class ChileanDialectRules:
         all_matches = sorted(all_matches, key=lambda x: x["start"])
         return all_matches
 
+    def get_chilenismos_rule(self, chilenismo):
+        """
+        Returns the rule for a specific chilenismo.
+        """
+        return (
+            f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish, meaning: {self.chilenismos_dictionary[chilenismo]['definition']}",
+        )
+
     def find_chilenismos(self, input_text, doc=None):
         """
         Detects chilenismos in the input text from the clean dictionary
@@ -120,13 +129,27 @@ class ChileanDialectRules:
         results = []
         if doc is None:
             doc = self.nlp(input_text)
-        lemmas = [token.lemma_.lower() for token in doc]
+
+        lemmas = []
+        for token in doc:
+            text_lower = token.text.lower()
+            lemma_lower = token.lemma_.lower()
+
+            # Edge case to handle weird spaCy article matching
+            if (text_lower == "el" and lemma_lower == "la") or (
+                text_lower == "la" and lemma_lower == "el"
+            ):
+                lemmas.append(text_lower)  # keep original
+            else:
+                lemmas.append(lemma_lower)
+
         for chilenismo in self.chilenismos_dictionary:
             # Careful about multi-word chilenismos
             chilenismo_lower = chilenismo.lower()
 
             # If there's a direct match, return the chilenismo, it's probably right!
-            if chilenismo_lower in input_text.lower():
+            pattern = r"\b" + re.escape(chilenismo_lower) + r"\b"
+            if re.search(pattern, input_text.lower()):
                 start_idx = input_text.lower().index(chilenismo_lower)
                 end_idx = start_idx + len(chilenismo_lower)
                 results.append(
@@ -134,22 +157,33 @@ class ChileanDialectRules:
                         "text": chilenismo,
                         "start": start_idx,
                         "end": end_idx,
-                        "explanation": f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish",
+                        "explanation": self.get_chilenismos_rule(chilenismo),
                     }
                 )
                 continue
 
-            if chilenismo_lower in " ".join(lemmas):
+            chilenismo_base = chilenismo_lower.split()[0]
+            is_reflexive = chilenismo_base.endswith("se")
+            has_objects_suffix = chilenismo_base.endswith(("lo", "la"))
+            has_parenthetical = re.search(r"\(.*?\)", chilenismo_lower)
+
+            if chilenismo_lower in " ".join(lemmas) or (
+                self.chilenismos_dictionary[chilenismo]["is_verb"]
+                and is_reflexive
+                and chilenismo_base[:-2] in " ".join(lemmas)
+            ):
                 if not self.chilenismos_dictionary[chilenismo]["is_verb"]:
                     # Try to find span from lemmas back to text
                     for token in doc:
-                        if token.lemma_.lower() == chilenismo_lower.split()[0]:
+                        if token.lemma_.lower() == chilenismo_base:
                             results.append(
                                 {
                                     "text": token.text,
                                     "start": token.idx,
                                     "end": token.idx + len(token.text),
-                                    "explanation": f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish",
+                                    "explanation": self.get_chilenismos_rule(
+                                        chilenismo
+                                    ),
                                 }
                             )
                             break
@@ -157,14 +191,9 @@ class ChileanDialectRules:
                     # Check if the verb is in the right form
                     for token in doc:
                         if (
-                            token.lemma_.lower() == chilenismo_lower.split()[0]
+                            token.lemma_.lower() in chilenismo_base
                             and token.pos_ == "VERB"
                         ):
-                            chilenismo_base = chilenismo_lower.split()[0]
-                            is_reflexive = chilenismo_base.endswith("se")
-                            has_objects_suffix = chilenismo_base.endswith(("lo", "la"))
-                            has_parenthetical = re.search(r"\(.*?\)", chilenismo_lower)
-
                             # Ensure that the chilenismo verb is in a reflexive form
                             if is_reflexive:
                                 # Check one of the children is a reflexive pronoun
@@ -180,7 +209,9 @@ class ChileanDialectRules:
                                             "text": token.text,
                                             "start": token.idx,
                                             "end": token.idx + len(token.text),
-                                            "explanation": f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish",
+                                            "explanation": self.get_chilenismos_rule(
+                                                chilenismo
+                                            ),
                                         }
                                     )
                             # Ensure that the chilenismo verb has the right objects
@@ -207,16 +238,20 @@ class ChileanDialectRules:
                                             "text": token.text,
                                             "start": token.idx,
                                             "end": token.idx + len(token.text),
-                                            "explanation": f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish",
+                                            "explanation": self.get_chilenismos_rule(
+                                                chilenismo
+                                            ),
                                         }
                                     )
-                            else:
+                            else: # Just a normal verb
                                 results.append(
                                     {
                                         "text": token.text,
                                         "start": token.idx,
                                         "end": token.idx + len(token.text),
-                                        "explanation": f"Chilenismo: {chilenismo}, regional vocabulary specific to Chilean Spanish",
+                                        "explanation": self.get_chilenismos_rule(
+                                            chilenismo
+                                        ),
                                     }
                                 )
         return results
@@ -313,6 +348,7 @@ class ChileanDialectRules:
             return True
         return False
 
+    # Low powered
     def find_chilean_imperative(self, input_text, doc=None):
         """
         Detects if the input text has a Chilean imperative verb.
@@ -368,18 +404,18 @@ class ChileanDialectRules:
                 for verb in verb_tokens:
                     for r in range(1, len(pronouns) + 1):
                         for chain in itertools.permutations(
-                            [p.text.lower() for p in pronouns], r
+                            [p for p in pronouns], r
                         ):
                             clitic_suffix = "".join(chain)
                             if verb.text.lower().endswith(clitic_suffix):
                                 for pronoun in pronouns:
-                                    if pronoun.text.lower() in chain:
+                                    if pronoun in chain:
                                         reduplications.append(
                                             {
                                                 "text": verb.text,
                                                 "start": verb.idx,
                                                 "end": verb.idx + len(verb.text),
-                                                "explanation": f"Clitic reduplication: clitic pronoun '{pronoun.text}' appears both independently and suffixed to verb '{verb.text}', a colloquial feature in Chilean Spanish.",
+                                                "explanation": f"Clitic reduplication: clitic pronoun '{pronoun}' appears both independently and suffixed to verb '{verb.text}', a colloquial feature in Chilean Spanish.",
                                             }
                                         )
                                 break  # Avoid duplicate explanations for same verb

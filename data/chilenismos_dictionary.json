@@ -27,6 +27,10 @@
         "definition": "No tener dinero.",
         "is_verb": true
     },
+    "Ando pato": {
+        "definition": "No tengo dinero.",
+        "is_verb": true
+    },
     "Apa\u00f1ar": {
         "definition": "Acompa\u00f1ar a un amigo, f\u00edsicamente o psicol\u00f3gicamente.",
         "is_verb": true
@@ -94,6 +98,10 @@
     "Cachar": {
         "definition": "Mirar, ver algo, entender, captar.",
         "is_verb": true
+    },
+    "Cachai": {
+        "definition": "¿Entiendes?, ¿captas?, ¿comprendes? (uso informal).",
+        "is_verb": false
     },
     "Cachureos": {
         "definition": "Cosas variadas que se guardan, pero que tienen poca utilidad.",
@@ -237,6 +245,10 @@
     },
     "Guata": {
         "definition": "Barriga, panza.",
+        "is_verb": false
+    },
+    "Guatazo": {
+        "definition": "Caída o golpe fuerte, especialmente de guata (barriga) contra el suelo.",
         "is_verb": false
     },
     "Guater": {
