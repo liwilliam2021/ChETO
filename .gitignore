@@ -6,3 +6,5 @@ secrets.env
 *.pyc
 */outputs/*
 .DS_Store
+data/*
+!data/chilenismos_dictionary.json

@@ -1,0 +1,558 @@
+{
+    "Achacarse": {
+        "definition": "Entristecerse, desanimarse.",
+        "is_verb": true
+    },
+    "Achuntar": {
+        "definition": "Acertar, apuntar, dar al grano.",
+        "is_verb": true
+    },
+    "A lapa": {
+        "definition": "Montarse sobre los hombros de otra persona. En el norte, \u201ca tota\u201d. En el sur, \u201ca chique\u201d o \u201cal acha\u201d.",
+        "is_verb": false
+    },
+    "Al lote": {
+        "definition": "Desordenado, sin reglas.",
+        "is_verb": false
+    },
+    "Al tiro": {
+        "definition": "De inmediato.",
+        "is_verb": false
+    },
+    "Al toque": {
+        "definition": "Hacer algo de inmediato.",
+        "is_verb": false
+    },
+    "Andar pato": {
+        "definition": "No tener dinero.",
+        "is_verb": true
+    },
+    "Apa\u00f1ar": {
+        "definition": "Acompa\u00f1ar a un amigo, f\u00edsicamente o psicol\u00f3gicamente.",
+        "is_verb": true
+    },
+    "Apestarse": {
+        "definition": "Enojarse, disgustarse, aburrirse.",
+        "is_verb": true
+    },
+    "Aperrar": {
+        "definition": "Ser valiente, insistir a pesar de las dificultades.",
+        "is_verb": true
+    },
+    "Apitutado": {
+        "definition": "Alguien que tiene buenos contactos y consigue objetivos a trav\u00e9s de ellos.",
+        "is_verb": false
+    },
+    "Apretado": {
+        "definition": "Ser ego\u00edsta, taca\u00f1o, avaro.",
+        "is_verb": false
+    },
+    "Arrugar": {
+        "definition": "Echar pie atr\u00e1s, arrepentirse, desistir.",
+        "is_verb": true
+    },
+    "Atao": {
+        "definition": "Problema.",
+        "is_verb": false
+    },
+    "Avispado": {
+        "definition": "Audaz, \u00e1gil, inteligente.",
+        "is_verb": false
+    },
+    "Bac\u00e1n": {
+        "definition": "Bueno, incre\u00edble, excelente, espectacular.",
+        "is_verb": false
+    },
+    "Barsa": {
+        "definition": "Fresco, sinverg\u00fcenza.",
+        "is_verb": false
+    },
+    "Buena leche": {
+        "definition": "Persona buena, honesta, transparente, con buenas intenciones.",
+        "is_verb": false
+    },
+    "Bronca": {
+        "definition": "Rabia, disgusto, enojo.",
+        "is_verb": false
+    },
+    "Buche": {
+        "definition": "Est\u00f3mago.",
+        "is_verb": false
+    },
+    "Cabra": {
+        "definition": "Ni\u00f1a.",
+        "is_verb": false
+    },
+    "Cabro": {
+        "definition": "Ni\u00f1o.",
+        "is_verb": false
+    },
+    "Cabritas": {
+        "definition": "Palomitas de ma\u00edz.",
+        "is_verb": false
+    },
+    "Cachar": {
+        "definition": "Mirar, ver algo, entender, captar.",
+        "is_verb": true
+    },
+    "Cachureos": {
+        "definition": "Cosas variadas que se guardan, pero que tienen poca utilidad.",
+        "is_verb": false
+    },
+    "Cahu\u00edn": {
+        "definition": "Mentira, enredo, invento que enga\u00f1a y confunde.",
+        "is_verb": false
+    },
+    "Calato": {
+        "definition": "Desnudo.",
+        "is_verb": false
+    },
+    "Caleta": {
+        "definition": "Bastante, en gran cantidad.",
+        "is_verb": false
+    },
+    "Carrete": {
+        "definition": "Fiesta.",
+        "is_verb": false
+    },
+    "Colarse": {
+        "definition": "Entrar sin permiso.",
+        "is_verb": true
+    },
+    "Condoro": {
+        "definition": "Error, desacierto, desliz.",
+        "is_verb": false
+    },
+    "Copete": {
+        "definition": "Bebida alcoh\u00f3lica.",
+        "is_verb": false
+    },
+    "Curao": {
+        "definition": "Bajo los efectos del alcohol.",
+        "is_verb": false
+    },
+    "Chapa": {
+        "definition": "Alias, nombre falso.",
+        "is_verb": false
+    },
+    "Choro": {
+        "definition": "Envalentonado. Tambi\u00e9n es choro, algo que tiene gracia.",
+        "is_verb": false
+    },
+    "Chorearse": {
+        "definition": "enojarse, entrar en rabia.",
+        "is_verb": true
+    },
+    "Dar pelota": {
+        "definition": "Prestarle atenci\u00f3n a alguien.",
+        "is_verb": true
+    },
+    "Dar jugo": {
+        "definition": "Perder el tiempo, no ser productivo; decir incoherencias.",
+        "is_verb": true
+    },
+    "Denso": {
+        "definition": "Persona seria, casi malhumorada, que tiende a tomarse las cosas muy r\u00edgidamente y no en forma liviana.",
+        "is_verb": false
+    },
+    "Doblado": {
+        "definition": "Muy borracho, drogado, inconsciente.",
+        "is_verb": false
+    },
+    "Echar la foca": {
+        "definition": "Retar, increpar a alguien.",
+        "is_verb": true
+    },
+    "Embarrarla": {
+        "definition": "Arruinar algo o una situaci\u00f3n.",
+        "is_verb": true
+    },
+    "Engrupir": {
+        "definition": "Seducir, coquetear. Tambi\u00e9n mentir, enga\u00f1ar.",
+        "is_verb": true
+    },
+    "Enrollado": {
+        "definition": "Muy involucrado, muy sensible, muy reflexivo. Enredado.",
+        "is_verb": false
+    },
+    "Estirar la pata": {
+        "definition": "Morir.",
+        "is_verb": true
+    },
+    "Fiambre": {
+        "definition": "calificativo para hediondo, podrido.",
+        "is_verb": false
+    },
+    "Filo": {
+        "definition": "no importa.",
+        "is_verb": false
+    },
+    "Fome": {
+        "definition": "Aburrido, sin gracia.",
+        "is_verb": false
+    },
+    "Fonda": {
+        "definition": "lugar o fiesta en donde se celebran las Fiestas Patrias.",
+        "is_verb": false
+    },
+    "Fresco": {
+        "definition": "Atrevido.",
+        "is_verb": false
+    },
+    "Gallo": {
+        "definition": "Se usa para designar a una persona joven.",
+        "is_verb": false
+    },
+    "Galla": {
+        "definition": "Se usa para designar a una persona joven.",
+        "is_verb": false
+    },
+    "Gancho": {
+        "definition": "Amigo, vecino (utilizado en el campo).",
+        "is_verb": false
+    },
+    "Ganso (a)": {
+        "definition": "Tonta, ingenua.",
+        "is_verb": false
+    },
+    "Gauchada": {
+        "definition": "Favor.",
+        "is_verb": false
+    },
+    "Gil": {
+        "definition": "Tonto, leso.",
+        "is_verb": false
+    },
+    "Guacho": {
+        "definition": "Hijo no reconocido por su padre, hu\u00e9rfano.",
+        "is_verb": false
+    },
+    "Guagua": {
+        "definition": "Beb\u00e9.",
+        "is_verb": false
+    },
+    "Guanaco": {
+        "definition": "Veh\u00edculo perteneciente a la Polic\u00eda que lanza agua para frenar disturbios.",
+        "is_verb": false
+    },
+    "Guata": {
+        "definition": "Barriga, panza.",
+        "is_verb": false
+    },
+    "Guater": {
+        "definition": "Excusado, WC.",
+        "is_verb": false
+    },
+    "Hachazo": {
+        "definition": "Malestar matinal producido por el exceso de alcohol del d\u00eda anterior.",
+        "is_verb": false
+    },
+    "Hallulla": {
+        "definition": "Tipo de pan.",
+        "is_verb": false
+    },
+    "Huaso": {
+        "definition": "Campesino chileno.",
+        "is_verb": false
+    },
+    "Huev\u00f3n": {
+        "definition": "Se utiliza para calificar a alguien de tonto o est\u00fapido; sin embargo, tambi\u00e9n puede significar amigo. Tiene m\u00faltiples derivaciones.",
+        "is_verb": false
+    },
+    "Inflar (a alguien)": {
+        "definition": "Prestar atenci\u00f3n, tomar en cuenta.",
+        "is_verb": true
+    },
+    "Inflado": {
+        "definition": "Algo a lo que se le ha dado m\u00e1s valor que lo que realmente merece.",
+        "is_verb": false
+    },
+    "Irse al chancho": {
+        "definition": "Excederse, sobrepasarse, abusar.",
+        "is_verb": true
+    },
+    "Jarana": {
+        "definition": "Fiesta, Diversi\u00f3n.",
+        "is_verb": false
+    },
+    "Jote": {
+        "definition": "Insistente al acercarse rom\u00e1nticamente a una persona.",
+        "is_verb": false
+    },
+    "Julepe": {
+        "definition": "Miedo, temor.",
+        "is_verb": false
+    },
+    "Kilterrier": {
+        "definition": "Perro sin raza determinada, producto de una mezcla poco fina. Calificativo para perro de la calle.",
+        "is_verb": true
+    },
+    "Kiltro": {
+        "definition": "Perro sin raza determinada, producto de una mezcla poco fina. Calificativo para perro de la calle.",
+        "is_verb": false
+    },
+    "La firme": {
+        "definition": "La verdad, lo real.",
+        "is_verb": false
+    },
+    "La dura": {
+        "definition": "La verdad",
+        "is_verb": false
+    },
+    "Lanza": {
+        "definition": "Delincuente, ladr\u00f3n, mafioso.",
+        "is_verb": false
+    },
+    "Lata": {
+        "definition": "Aburrimiento, desmotivaci\u00f3n.",
+        "is_verb": false
+    },
+    "Latero": {
+        "definition": "Aburrido.",
+        "is_verb": false
+    },
+    "La raja": {
+        "definition": "Situaci\u00f3n o cosa muy buena.",
+        "is_verb": false
+    },
+    "Lesear": {
+        "definition": "Molestar, entretenerse, tontear.",
+        "is_verb": true
+    },
+    "Leseras": {
+        "definition": "Tonteras, banalidades.",
+        "is_verb": false
+    },
+    "Liz Taylor": {
+        "definition": "Listo.",
+        "is_verb": false
+    },
+    "LJ": {
+        "definition": "Nos fuimos.",
+        "is_verb": false
+    },
+    "Lolo": {
+        "definition": "Muchacho, joven.",
+        "is_verb": false
+    },
+    "Lola": {
+        "definition": "Muchacha, joven.",
+        "is_verb": false
+    },
+    "Longi": {
+        "definition": "Loco, hippie.",
+        "is_verb": false
+    },
+    "Luca": {
+        "definition": "Billete de mil pesos.",
+        "is_verb": false
+    },
+    "Machucado": {
+        "definition": "Golpeado, maltra\u00eddo.",
+        "is_verb": false
+    },
+    "Mano de guagua": {
+        "definition": "Avaro, ego\u00edsta, mezquino.",
+        "is_verb": false
+    },
+    "Micro": {
+        "definition": "Bus del transporte p\u00fablico.",
+        "is_verb": false
+    },
+    "Mina": {
+        "definition": "Mujer, chica, muchacha. Adem\u00e1s del gen\u00e9rico, se usa para denominar a las chicas atractivas.",
+        "is_verb": false
+    },
+    "Mino": {
+        "definition": "Hombre, muchacho, joven. Adem\u00e1s del gen\u00e9rico, se usa para denominar a los muchachos atractivos.",
+        "is_verb": false
+    },
+    "Ene": {
+        "definition": "Mucho, bastante, gran cantidad.",
+        "is_verb": false
+    },
+    "Nanai": {
+        "definition": "Cari\u00f1o, arrumaco.",
+        "is_verb": false
+    },
+    "Ni ah\u00ed": {
+        "definition": "No me importa.",
+        "is_verb": false
+    },
+    "Ni un brillo": {
+        "definition": "Algo o alguien sin gracia, sin atractivo.",
+        "is_verb": false
+    },
+    "Ojo": {
+        "definition": "\u00a1Atenci\u00f3n!",
+        "is_verb": false
+    },
+    "Onda": {
+        "definition": "Vibra, energ\u00eda negativa o positiva.",
+        "is_verb": false
+    },
+    "Once": {
+        "definition": "Hora del t\u00e9 durante la tarde.",
+        "is_verb": false
+    },
+    "Estar pal gato": {
+        "definition": "Sentirse mal, enfermo.",
+        "is_verb": true
+    },
+    "Pagar el piso": {
+        "definition": "Expresi\u00f3n que se usa cuando una persona que trabaja por primera vez invita con su primer sueldo a sus compa\u00f1eros y/o familiares, a una comida o a una ronda de tragos.",
+        "is_verb": true
+    },
+    "Paracaidista": {
+        "definition": "Calificativo para qui\u00e9n asiste a un lugar o fiesta a la que no ha sido invitado.",
+        "is_verb": false
+    },
+    "Pasarlo chancho": {
+        "definition": "Pasarlo bien, entretenerse.",
+        "is_verb": false
+    },
+    "Patas negras": {
+        "definition": "Amante.",
+        "is_verb": false
+    },
+    "Patiperro": {
+        "definition": "Quien viaja mucho.",
+        "is_verb": false
+    },
+    "Patudo": {
+        "definition": "Fresco, sinverg\u00fcenza.",
+        "is_verb": false
+    },
+    "Pavear": {
+        "definition": "Distraerse.",
+        "is_verb": true
+    },
+    "Pega": {
+        "definition": "Trabajo.",
+        "is_verb": false
+    },
+    "Peludo": {
+        "definition": "Dif\u00edcil, complicado. Alguien peludo, alguien viejo, maduro.",
+        "is_verb": false
+    },
+    "Picada": {
+        "definition": "Lugar de bajo perfil donde comprar productos de calidad (comida, objetos, regalos).",
+        "is_verb": false
+    },
+    "Piola": {
+        "definition": "Inadvertido. Tranquilo.",
+        "is_verb": false
+    },
+    "Pololeo": {
+        "definition": "Relaci\u00f3n amorosa, de pareja cuando no se est\u00e1 casado.",
+        "is_verb": false
+    },
+    "Polola": {
+        "definition": "Mujer que mantiene una relaci\u00f3n amorosa, de pareja, cuando no est\u00e1 casada.",
+        "is_verb": false
+    },
+    "Previa": {
+        "definition": "Reuni\u00f3n de amigos antes de una fiesta.",
+        "is_verb": false
+    },
+    "Queque": {
+        "definition": "Se usa para designar al trasero o las nalgas de las personas.",
+        "is_verb": false
+    },
+    "Quina": {
+        "definition": "Moneda de quinientos pesos.",
+        "is_verb": false
+    },
+    "Quiubo": {
+        "definition": "Saludo que alude a \u00bfqu\u00e9 hubo?, o \u00bfQu\u00e9 ha sucedido?",
+        "is_verb": false
+    },
+    "Rajado": {
+        "definition": "Muy r\u00e1pido, muy generoso, muy bueno para la fiesta.",
+        "is_verb": false
+    },
+    "Rasca": {
+        "definition": "De mala calidad, ordinario, vulgar.",
+        "is_verb": false
+    },
+    "Rico": {
+        "definition": "agradable, entretenido.",
+        "is_verb": false
+    },
+    "Sacar la cresta": {
+        "definition": "Pegarle a alguien, darle una paliza, un golpe.",
+        "is_verb": true
+    },
+    "Sacar pica": {
+        "definition": "Provocar celos o envidia a alguien.",
+        "is_verb": true
+    },
+    "Sapo": {
+        "definition": "Sopl\u00f3n, alguien curioso, disfruta del chisme.",
+        "is_verb": false
+    },
+    "Seco (alguien)": {
+        "definition": "Que tiene talento, que es exitoso en un \u00e1rea.",
+        "is_verb": false
+    },
+    "Socio": {
+        "definition": "Amigo, compadre.",
+        "is_verb": false
+    },
+    "Taco": {
+        "definition": "Tr\u00e1fico lento, embotellamiento.",
+        "is_verb": false
+    },
+    "Talla": {
+        "definition": "Un chiste, una broma. En el norte",
+        "is_verb": false
+    },
+    "Tata": {
+        "definition": "Abuelo.",
+        "is_verb": false
+    },
+    "Tirar a la chu\u00f1a": {
+        "definition": "Tirar algo al aire y que cada quien recoja lo que pueda.",
+        "is_verb": true
+    },
+    "Tocar el viol\u00edn": {
+        "definition": "Ser el tercero acompa\u00f1ando a una pareja.",
+        "is_verb": true
+    },
+    "Tollo": {
+        "definition": "Mentira, exageraci\u00f3n.",
+        "is_verb": false
+    },
+    "Tuto (hacer)": {
+        "definition": "Dormir. Tener tuto, tener sue\u00f1o.",
+        "is_verb": false
+    },
+    "\u00daltimo": {
+        "definition": "Lo peor, malo, p\u00e9simo.",
+        "is_verb": false
+    },
+    "Hacer una vaca": {
+        "definition": "Colecta de dinero entre varios. En el sur, \u201chacer una cucha\u201d.",
+        "is_verb": true
+    },
+    "Viejo Verde": {
+        "definition": "Hombre mayor que tiende a coquetear con mujeres bastante m\u00e1s j\u00f3venes que \u00e9l.",
+        "is_verb": false
+    },
+    "Virarse": {
+        "definition": "Irse, retirarse de un lugar.",
+        "is_verb": true
+    },
+    "Yapa": {
+        "definition": "Algo que te dan gratis, de m\u00e1s, de regalo.",
+        "is_verb": false
+    },
+    "Yunta": {
+        "definition": "Mejor amigo, compa\u00f1ero, compadre.",
+        "is_verb": false
+    },
+    "Andar como zombi": {
+        "definition": "Dormido, con sue\u00f1o, medio inconsciente.",
+        "is_verb": true
+    }
+}

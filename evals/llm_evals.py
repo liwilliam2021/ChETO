@@ -24,7 +24,7 @@ def compute_sentiment_accuracy(llm_api, length=100, model_override=None):
 
 
 def get_sentiment_scores(llm_api, length, model_override=None):
-    sentiment_data = json.load(open("../data/sentiment_data.json"))
+    sentiment_data = json.load(open("../scrapers/outputs/labeled_data.json"))
 
     # Extract a balanced sample of reviews
     grouped_reviews = defaultdict(list)
