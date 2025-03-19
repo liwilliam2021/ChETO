@@ -88,10 +88,11 @@ def eval_test_set (llm_api, key='https://www.biobiochile.cl/', n=120):
             correct += int(pred_neg == False)
             total += 1
 
-    with open("llm_pairwise_predictions.json", "w") as f:
+    save_path = "outputs/" + llm_api.api_name + "_" + "llm_pairwise_predictions.json"
+    with open(save_path, "w") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     accuracy = correct / total
     print(f"\n✅ Saved {len(results)} predictions to llm_pairwise_predictions.json")
     print(f"✅ Total accuracy: {accuracy * 100:.2f}% ({correct}/{total} correct predictions)")
 
-eval_test_set(anthropic_api)
+eval_test_set(openai_api)

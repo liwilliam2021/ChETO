@@ -79,3 +79,21 @@ Question: Is Sentence B likely to directly follow Sentence A in the original tex
 
 Answer:
 """
+
+TITLE_PARAGRAPH_PROMPT = """
+You are an expert editor. Your task is to determine if a paragraph is relevant to a given title.
+
+Instructions:
+- Read the title carefully.
+- Read the paragraph carefully.
+- Decide if the paragraph is consistent with, or directly related to, the topic or subject described by the title.
+
+Respond with only "Yes" if the paragraph clearly matches the topic of the title.
+Respond with only "No" if the paragraph does not match the topic of the title.
+
+Title: "{title}"
+
+Paragraph: "{paragraph}"
+
+Does this paragraph match the topic described by the title? Answer "Yes" or "No" only.
+"""
