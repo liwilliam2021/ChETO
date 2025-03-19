@@ -285,7 +285,7 @@
     },
     "Kilterrier": {
         "definition": "Perro sin raza determinada, producto de una mezcla poco fina. Calificativo para perro de la calle.",
-        "is_verb": true
+        "is_verb": false
     },
     "Kiltro": {
         "definition": "Perro sin raza determinada, producto de una mezcla poco fina. Calificativo para perro de la calle.",

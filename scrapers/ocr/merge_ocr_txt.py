@@ -12,8 +12,8 @@ def merge_txt_files(directory, output_file):
                 outfile.write("\n")
 
 # Define the directory containing your text files and the output file path
-directory_path = '../data/MC0049597_000' 
-output_filename = '../data/OCR1.txt'
+directory_path = '../../data/MC0049597_000' 
+output_filename = '.../../data/OCR1.txt'
 
 merge_txt_files(directory_path, output_filename)
 print(f"All text files have been merged into {output_filename}")

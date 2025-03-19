@@ -8,3 +8,4 @@ secrets.env
 .DS_Store
 data/*
 !data/chilenismos_dictionary.json
+!data/queísmo_trigger.json
