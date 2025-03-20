@@ -31,6 +31,7 @@ You are a linguistics expert. Your task is to score how meaningfully the followi
 Score from 0 to 10 where:
 - 0 = no noticeable dialect difference
 - 10 = strong, clear dialectal transformation with meaningful changes
+If the sentence is in English or another non Spanish language, assign a score of 0.
 
 Original (Chilean):
 {original}

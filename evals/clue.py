@@ -4,7 +4,7 @@ def compute_glue_like_score(sentiment_score, contrastive_score, title_match_scor
     Computes a composite score by averaging the 3 task scores.
     Each score is normalized between 0 and 1.
     """
-    return (sentiment_score + contrastive_score + title_match_score) / 3
+    return 100 * (sentiment_score + contrastive_score + title_match_score) / 3
 
 print (
     "GPT score:",
